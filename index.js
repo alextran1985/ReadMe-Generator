@@ -36,7 +36,7 @@ const questions = () => {
         type: 'list',
         name: 'license',
         message: 'What are the License you use for your README?',
-        choices:['']
+        choices:['MIT','Apache-2.0','GPL-3.0']
       },
       {
         type: 'input',
@@ -51,7 +51,12 @@ const questions = () => {
       {
         type: 'input',
         name: 'questions',
-        message: 'Do you have any questions?',
+        message: 'What is your Github username?',
+      }, 
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is your e-mail address?',
       }, 
     ])
     .then((answers) => {
@@ -61,7 +66,7 @@ const questions = () => {
       console.log("Generated Dataset: ", READMEPageContent);
       console.log("Data type: ", typeof READMEPageContent);  // string 
   
-      fs.writeFile('README.md', READMEPageContent, (err) =>
+      fs.writeFile('READMEExample.md', READMEPageContent, (err) =>
         err ? console.log(err) : console.log('Successfully created README.md!')
       );
       
@@ -70,7 +75,9 @@ const questions = () => {
 }
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+}
 
 // TODO: Create a function to initialize app
 function init() {
